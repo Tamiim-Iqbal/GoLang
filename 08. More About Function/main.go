@@ -10,7 +10,11 @@ func processOperation(a int, b int, op func(p int, q int)) {
 func call() func (x int, y int) {
 	return add
 }
-
+//  Higher order function that takes a function as parameter and returns a function
+func PO(a int, b int, op func(p int, q int)) func(p int, q int) { 
+	op(a, b)
+	return op
+}
 func add(a int, b int) {                // parameters => a, b
 	c := a + b
 	fmt.Println("Sum:", c)
@@ -20,4 +24,5 @@ func main() {
 	processOperation(2, 5, add)         // arguments => 3, 5
 	sum := call()                       // function expression
 	sum(7, 5)                           // calling the returned function
+	PO(10, 20, add)            
 }
