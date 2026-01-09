@@ -6,6 +6,11 @@ func processOperation(a int, b int, op func(p int, q int)) {
 	op(a, b)
 }
 
+// Higher order function that returns a function
+func call() func (x int, y int) {
+	return add
+}
+
 func add(a int, b int) {                // parameters => a, b
 	c := a + b
 	fmt.Println("Sum:", c)
@@ -13,4 +18,6 @@ func add(a int, b int) {                // parameters => a, b
 
 func main() {
 	processOperation(2, 5, add)         // arguments => 3, 5
-} 
+	sum := call()                       // function expression
+	sum(7, 5)                           // calling the returned function
+}
