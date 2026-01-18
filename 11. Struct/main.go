@@ -13,15 +13,15 @@ func main () {
 	// fmt.Println(a)
 
 	var user1 User 
-	user1 = User{
-		Name : "Tamim",
-		Age  : 25,
+	user1 = User{ 
+		Name : "Tamim",           // property or member variable
+		Age  : 25, 
 	}
 
 	user2 := User{                  // another way to declare and initialize a struct variable (num := 10)
 		Name : "Roki",
 		Age  : 30,
-	}
+	}   
 
 	fmt.Println("*** User 1 ***")
 	fmt.Println("All Data: ",user1)
@@ -32,4 +32,13 @@ func main () {
 	fmt.Println("All Data: ",user2)
 	fmt.Println("Name: ", user2.Name)
 	fmt.Println("Age: ", user2.Age)
+
+	/*
+	*** Compilation ***
+	== Code Segment ==
+	1. User = type User struct {...}
+	2. main = func () {...}
+
+
+	*/
 }
