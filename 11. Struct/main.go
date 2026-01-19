@@ -38,7 +38,5 @@ func main () {
 	== Code Segment ==
 	1. User = type User struct {...}
 	2. main = func () {...}
-
-
 	*/
 }
